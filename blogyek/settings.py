@@ -6,7 +6,7 @@ from django.contrib.messages import constants as messages
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 from django.urls import reverse_lazy
 from environs import Env
-
+import dj_database_url
 
 # Environment variables
 env = Env()
