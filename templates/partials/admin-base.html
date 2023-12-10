@@ -3,10 +3,10 @@
 
 
 <!doctype html>
-<html lang="en">
+<html lang="uz">
 
 <head>
-    <title>Creator's Blog </title>
+    <title>Quiz -- Admin Panel </title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -65,7 +65,7 @@
                 <div class="row pt-5">
                     <div class="col-12 text-center">
                         <a class="absolute-toggle d-block d-md-none" data-toggle="collapse" href="#navbarMenu" role="button" aria-expanded="false" aria-controls="navbarMenu"><span class="burger-lines"></span></a>
-                        <h1 class="site-logo"><a href="{% url 'pages:index' %}">Creator's Blog </a></h1>
+                        <h1 class="site-logo"><a href="{% url 'pages:index' %}">Quiz-Admin Panel </a></h1>
                     </div>
                 </div>
             </div>
@@ -80,31 +80,20 @@
                                 <a class="nav-link  {% if '/' == request.path %}active{% endif %}" href="{% url 'pages:index' %}"><i class="fa fa-home"></i>  Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link {% if 'post' in request.path and 'create' not in request.path %}active{% endif %}" href="{% url 'posts:posts' %}"><i class="fa fa-comments"></i>  Posts</a>
+                                <a class="nav-link {% if 'post' in request.path and 'create' not in request.path %}active{% endif %}" href="{% url 'admin-teacher' %}"><i class="fa fa-user-circle"></i> Teachers</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link {% if 'accounts/all' in request.path or 'accounts/detail' in request.path %}active{% endif %}" href="{% url 'user:authors' %}"><i class="fa fa-user-circle"></i> Creator</a>
-                            </li>
-                             <li class="nav-item">
-                                <a class="nav-link  {% if 'about' in request.path %}active{% endif %}" href="{% url 'quiz' %}"><i class="fa fa-question"></i>  Quiz </a>
-                            </li> 
-                            <li class="nav-item">
-                                <a class="nav-link  {% if 'about' in request.path %}active{% endif %}" href="{% url 'pages:about' %}"><i class="fa fa-group"></i>  About </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link  {% if 'contact' in request.path %}active{% endif %}" href="{% url 'pages:contact' %}"><i class="fa fa-comments"></i>  Contact</a>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle {% if 'blog-home' in request.path or 'change-password' in request.path or 'create' in request.path %}active{% endif %}" href="" id="dropdown05" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-book"></i> Books</a>
-                                <div class="dropdown-menu" aria-labelledby="dropdown05">
-                                    <a class="dropdown-item" href="{% url 'blog-home' %}"><i class="fa fa-book"></i>   El-books</a>
-                                    <!-- <a class="dropdown-item" href="#"><i class="fa fa-id-card"></i> Topshiriq</a> -->
-
-
-
-                                </div>
+                                <a class="nav-link {% if 'accounts/all' in request.path or 'accounts/detail' in request.path %}active{% endif %}" href="{% url 'admin-student' %}"><i class="fa fa-user"></i> Students</a>
 
                             </li>
+                                <a class="nav-link  {% if 'about' in request.path %}active{% endif %}" href="{% url 'admin-course' %}"><i class="fa fa-group"></i>  Yo'nalishlar </a>
+                            </li>
+                
+                            </li>
+                                <a class="nav-link  {% if 'about' in request.path %}active{% endif %}" href="{% url 'admin-question' %}"><i class="fa fa-question"></i>  Create a test</a>
+                            </li>
+                    
+
                             {% if request.user.is_authenticated %}
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle {% if 'profile' in request.path or 'change-password' in request.path or 'create' in request.path %}active{% endif %}" href="" id="dropdown05" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user-md"></i> {{ request.user.username }}</a>
@@ -113,6 +102,7 @@
                                     <a class="dropdown-item" href="{% url 'user:viewProfile'%}"><i class="fa fa-id-card"></i> My accaunt</a>
                                     <a href="{% url 'user-posts' user %}" class="dropdown-item "><i class="fas fa-money-check  "></i> My books</a>
                                     <a href="{% url 'post-create' %} " class="dropdown-item "><i class="fas fa-file-download"></i> Upload books</a>
+                                    <a class="dropdown-item" href="{% url 'admin-question' %}"><i class="fa fa-question"></i>  Create a test</a>
                                     <a class="dropdown-item " href="{% url 'user:updateProfile' %} "><i class="fa fa-pencil-square-o "></i> Accaunt edit</a>
                                     <a class="dropdown-item " href="{% url 'user:changePassword' %} "><i class="fa fa-wrench "></i> Password upload</a>
                                     <a class="dropdown-item " href="{% url 'user:logout' %} "><i class="fa fa-sign-out "></i> Log out</a>

@@ -44,9 +44,10 @@ INSTALLED_APPS = [
     'blog',
     'crispy_forms',
     'exam',
-    'exam.teacher',
-    'exam.student',
+    'student',
+    'teacher',
     'widget_tweaks',
+
 
 
 ]
@@ -95,21 +96,11 @@ WSGI_APPLICATION = 'blogyek.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+        'NAME': BASE_DIR / 'malumotlar-bazasi.sqlite3',
+    },
+
 }
 
-CKEDITOR_CONFIGS = {
-    'default': {
-        'toolbar': 'Custom',
-        'toolbar_Custom': [
-            ['Bold', 'Italic', 'Underline'],
-            ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],
-            ['Link', 'Unlink'],
-            ['RemoveFormat', 'Source']
-        ]
-    }
-}
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
 
@@ -151,7 +142,7 @@ STATIC_ROOT = BASE_DIR / 'staticfiles/'
 STATICFILES_DIRS = [
     BASE_DIR / 'static',
     BASE_DIR / 'blog/static',
-    BASE_DIR / 'exam/csslar',
+    BASE_DIR / 'static2',
 ]
 STATICFILES_STORAGE = 'whitenoise.storage.ManifestStaticFilesStorage'
 

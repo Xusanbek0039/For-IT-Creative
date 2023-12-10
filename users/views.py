@@ -130,7 +130,7 @@ class AuthorIndexView(ListView):
     model = User
     context_object_name = 'author_list'
     template_name = 'authors.html'
-    post = Post.objects.filter(available=True).count()
+    post = Post.objects.filter(available=False).count()
     queryset = User.objects.annotate(total_posts=Count('post')).filter(total_posts__gt='0').order_by('-total_posts')  # Users with at least 1 share
 
     def get_context_data(self, **kwargs):
