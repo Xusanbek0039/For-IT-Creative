@@ -21,3 +21,4 @@ dj_database_url
 django-crispy-forms
 django-widget_tweaks
 dj_database_url
+django-translator

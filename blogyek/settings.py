@@ -51,6 +51,7 @@ INSTALLED_APPS = [
 
 
 
+
 ]
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
@@ -126,6 +127,10 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
 LANGUAGE_CODE = 'uz-uz'
+LANGUAGES = [
+  ('uz', 'Uzbek'), 
+  ('ru', 'Russian')
+]
 
 TIME_ZONE = 'Asia/Tashkent'
 
