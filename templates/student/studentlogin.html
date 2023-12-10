@@ -25,12 +25,11 @@
         </div>
         <div class="row">
             <div class="col-md-6 form-group">
-                <input type="submit" value="Sign In" class="btn btn-primary">
+                <input type="submit" value="Sign in" class="btn btn-primary">
                 
             </div>
-            <div class="col-md-6 form-group">
-                <input type = "submit"type="{% url 'studentlogin' %}" value="Sign Up" class="btn btn-primary">
-                
+            <div class="col-md-4">
+                <a href="{% url 'studentsignup' %}">Sign Up</a>
             </div>
         </div>
     </form>
