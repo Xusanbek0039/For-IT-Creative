@@ -22,4 +22,4 @@ django-crispy-forms
 django-widget_tweaks
 dj_database_url
 django-translator
-jazzmin
+django-jazzmin
