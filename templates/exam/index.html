@@ -1,4 +1,4 @@
-{% extends 'partials/_base.html' %} {% load static %} {% block content %}
+{% extends 'partials/admin-base.html' %} {% load static %} {% block content %}
 <!-- SLIDER section -->
 <section class="site-section pt-5 pb-5">
     <div class="container">
@@ -70,59 +70,46 @@
 
 
                     <!-- Show All Posts Link YEK -->
-                    <div class="row mb-3">
-                        <div class="col-md-12 text-center text-capitalize" style="height:40px">
-                            <a onmouseover='$(this).addClass("btn btn-sm btn-primary")' onmouseout='$(this).removeClass("btn btn-sm btn-primary")' href="{% url 'posts:posts' %}"> Barcha postlarni ko'rish <i class="fa fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                    <div class="row mb-3">
-                        <div class="col-md-12 text-center text-capitalize" style="height:40px">
-                            <a onmouseover='$(this).addClass("btn btn-sm btn-primary")' onmouseout='$(this).removeClass("btn btn-sm btn-primary")' href="{% url 'blog-home' %}"> Elektron kitoblarni ko'rish <i class="fa fa-arrow-right"></i></a>
-                        </div>
-                    </div>
 
+        <div class="container mt-5"> <div class="row justify-content-center">
+
+            <div class="col-md-4">
+                <div class="card shadow p-3">
+                <div class="card-body text-center">
+                    <div class="bg-primary rounded-circle p-3 mt-3 mb-3">
+                    <i class="fa fa-user fa-2x text-white"></i>
+                    </div>
+                    <h4>Student</h4>
+                    <h2 class="mb-0 counter">{{ total_student }}</h2>
+                </div>
                 </div>
             </div>
-        </div>
-        <div class="container-fluid facts py-5 pt-lg-0">
-            <div class="container py-5 pt-lg-0">
-                <div class="row gx-0">
-                    <div class="ps-4">
-                        <div class="bg-light shadow d-flex align-items-center justify-content-center p-4" style="height: 150px;">
-                            <div class="bg-primary d-flex align-items-center justify-content-center rounded mb-2" style="width: 60px; height: 60px;">
-                                <i class="fa fa-check text-white"></i>
-                            </div>
-                            <div class="ps-4">
-                                <h5 class="text-primary mb-0">Student n/m</h5>
-                                <h1 class="mb-0" data-toggle="counter-up">{{ total_student }}</h1>
-                            </div>
-                        </div>
+            
+            <div class="col-md-4">
+                <div class="card shadow p-3"> 
+                <div class="card-body text-center">
+                    <div class="bg-primary rounded-circle p-3 mt-3 mb-3">
+                    <i class="fa fa-users fa-2x text-white"></i> 
                     </div>
-                    <div class="ps-4">
-                        <div class="bg-light shadow d-flex align-items-center justify-content-center p-4" style="height: 150px;">
-                            <div class="bg-primary d-flex align-items-center justify-content-center rounded mb-2" style="width: 60px; height: 60px;">
-                                <i class="fa fa-check text-white"></i>
-                            </div>
-                            <div class="ps-4">
-                                <h5 class="text-primary mb-0">Users numbers</h5>
-                                <h1 class="mb-0" data-toggle="counter-up">{{ total_users }}</h1>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="ps-4">
-                        <div class="bg-light shadow d-flex align-items-center justify-content-center p-4" style="height: 150px;">
-                            <div class="bg-primary d-flex align-items-center justify-content-center rounded mb-6" style="width: 60px; height: 60px;">
-                                <i class="fa fa-check text-white"></i>
-                            </div>
-                            <div class="ps-4">
-                                <h5 class="text-primary mb-0">Question n/m</h5>
-                                <h1 class="mb-6" data-toggle="counter-up">{{total_question}}</h1>
-                            </div>
-                        </div>
-                    </div>
+                    <h4>Users</h4>
+                    <h2 class="mb-0 counter">{{ total_users }}</h2>
+                </div>
                 </div>
             </div>
-        </div>
+            
+            <div class="col-md-4">
+                <div class="card shadow p-3">
+                <div class="card-body text-center">
+                    <div class="bg-primary rounded-circle p-3 mt-3 mb-3">   
+                    <i class="fa fa-question fa-2x text-white"></i>
+                    </div>
+                    <h4>Questions</h4>
+                    <h2 class="mb-0 counter">{{total_question}}</h2>
+                </div>
+                </div>
+            </div>
+        </div> </div>
+
         <!-- END main-content -->
         {% endblock %}
     <!-- Facts Start -->
