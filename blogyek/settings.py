@@ -21,7 +21,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = env.str("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -171,3 +171,6 @@ EMAIL_HOST_USER = 'Xusanbek'
 EMAIL_HOST_PASSWORD = 'Xusanbek0071'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
+
+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

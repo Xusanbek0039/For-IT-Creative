@@ -15,7 +15,11 @@ from student import forms as SFORM
 from .models import Result, Course
 from django.contrib.auth.models import User
 
+from django.shortcuts import render
+from django.http import HttpResponseNotFound
 
+def page_not_found_view(request, exception):
+   return render(request, '404.html')
 
 def home_view(request):
     dict={
