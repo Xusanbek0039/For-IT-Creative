@@ -6,7 +6,7 @@
 <html lang="uz">
 
 <head>
-    <title>Quiz - Panel </title>
+    <title>Teacher - Panel</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -65,7 +65,7 @@
                 <div class="row pt-5">
                     <div class="col-12 text-center">
                         <a class="absolute-toggle d-block d-md-none" data-toggle="collapse" href="#navbarMenu" role="button" aria-expanded="false" aria-controls="navbarMenu"><span class="burger-lines"></span></a>
-                        <h1 class="site-logo"><a href="{% url 'pages:index' %}">Quiz-Panel </a></h1>
+                        <h1 class="site-logo"><a href="{% url 'pages:index' %}">Teacher's Panel</a></h1>
                     </div>
                 </div>
             </div>
@@ -80,17 +80,14 @@
                                 <a class="nav-link  {% if '/' == request.path %}active{% endif %}" href="{% url 'pages:index' %}"><i class="fa fa-home"></i>  Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link {% if 'post' in request.path and 'create' not in request.path %}active{% endif %}" href="{% url 'teacherlogin' %}"><i class="fa fa-user-circle"></i> Teachers</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link {% if 'accounts/all' in request.path or 'accounts/detail' in request.path %}active{% endif %}" href="{% url 'studentlogin' %}"><i class="fa fa-user"></i> Students</a>
+                                <a class="nav-link {% if 'accounts/all' in request.path or 'accounts/detail' in request.path %}active{% endif %}" href="{% url 'teacher-dashboard' %}"><i class="fa fa-user"></i> Teacher's</a>
 
                             </li>
-                                <a class="nav-link  {% if 'about' in request.path %}active{% endif %}" href="{% url 'admin-course' %}"><i class="fa fa-group"></i>  Yo'nalishlar </a>
+                                <a class="nav-link  {% if 'about' in request.path %}active{% endif %}" href="{% url 'teacher-exam' %}"><i class="fa fa-book"></i>  Fanlar </a>
                             </li>
                 
                             </li>
-                                <a class="nav-link  {% if 'about' in request.path %}active{% endif %}" href="{% url 'admin-question' %}"><i class="fa fa-question"></i>  Create a test</a>
+                                <a class="nav-link  {% if 'about' in request.path %}active{% endif %}" href="{% url 'teacher-question' %}"><i class="fa fa-question"></i>  Create a test</a>
                             </li>
                     
 

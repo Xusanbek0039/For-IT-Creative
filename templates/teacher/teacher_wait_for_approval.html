@@ -2,6 +2,7 @@
 <title>IT Creative</title>
 {% load widget_tweaks %}
 
+{% extends 'partials/teacher-base.html' %}
 
   <style media="screen">
     .jumbotron {
@@ -18,7 +19,7 @@
     }
   </style>
   <body>
-    {% include "exam/navbar.html" %}
+
 
       <div class="jumbotron" style="margin-top: 0px;
         margin-bottom: 0px;">
@@ -35,6 +36,7 @@
           <a class="btn btn-danger btn-lg" href="/logout" style="border-radius: 0%;" role="button">Orqaga qaytish</a>
         </p>
       </div>
-{% include "exam/footer.html" %}
+
   </body>
 </html>
+{% endblock %}
