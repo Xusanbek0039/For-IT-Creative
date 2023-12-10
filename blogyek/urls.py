@@ -18,7 +18,7 @@ urlpatterns = [
     path('admin81/', admin.site.urls),
     path('teacher/',include('teacher.urls')),
     path('student/',include('student.urls')),
-    path('404/', views.page_not_found_view),
+
     
 
 

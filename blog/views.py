@@ -20,9 +20,6 @@ from django.shortcuts import render
 from django.shortcuts import render
 from django.http import HttpResponseNotFound
 
-def page_not_found_view(request, exception):
-   return render(request, 'blog/404.html')
-
 
 def home(request):
     context = {

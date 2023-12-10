@@ -12,6 +12,5 @@ urlpatterns = [
     path('media/Files/<int:pk>',PostDeleteView.as_view(),name='post-delete' ),
     path('search/',views.search,name='search' ),
     path('about/', views.about, name='blog-about'),
-    path('404/', views.page_not_found_view,name = '404'),
 
 ]
