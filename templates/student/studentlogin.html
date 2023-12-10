@@ -19,17 +19,18 @@
                 <input type="text" id="username" name="username" class="form-control" required>
             </div>
             <div class="col-md-12 form-group">
-                <label for="password">Parolingiz</label>
+                <label for="password">Password</label>
                 <input type="password" id="password" name="password" class="form-control" required>
             </div>
         </div>
         <div class="row">
             <div class="col-md-6 form-group">
-                <input type="submit" value="Kirish" class="btn btn-primary">
+                <input type="submit" value="Sign In" class="btn btn-primary">
                 
             </div>
-            <div class="col-md-4">
-                <a href="{% url 'teachersignup' %}">Accountingiz yo'qmi?</a>
+            <div class="col-md-6 form-group">
+                <input type = "submit"type="{% url 'studentlogin' %}" value="Sign Up" class="btn btn-primary">
+                
             </div>
         </div>
     </form>
