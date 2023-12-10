@@ -7,7 +7,7 @@ from django.contrib import admin
 from django.conf.urls.static import static
 from exam import views
 from django.contrib.auth.views import LogoutView,LoginView
-from error import views as error_views
+
 urlpatterns = [
     path('', include('pages.urls')),
     path('post/', include('posts.urls')),
