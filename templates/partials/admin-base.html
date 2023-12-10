@@ -6,7 +6,7 @@
 <html lang="uz">
 
 <head>
-    <title>Quiz -- Admin Panel </title>
+    <title>Quiz - Panel </title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -65,7 +65,7 @@
                 <div class="row pt-5">
                     <div class="col-12 text-center">
                         <a class="absolute-toggle d-block d-md-none" data-toggle="collapse" href="#navbarMenu" role="button" aria-expanded="false" aria-controls="navbarMenu"><span class="burger-lines"></span></a>
-                        <h1 class="site-logo"><a href="{% url 'pages:index' %}">Quiz-Admin Panel </a></h1>
+                        <h1 class="site-logo"><a href="{% url 'pages:index' %}">Quiz-Panel </a></h1>
                     </div>
                 </div>
             </div>
@@ -80,10 +80,10 @@
                                 <a class="nav-link  {% if '/' == request.path %}active{% endif %}" href="{% url 'pages:index' %}"><i class="fa fa-home"></i>  Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link {% if 'post' in request.path and 'create' not in request.path %}active{% endif %}" href="{% url 'admin-teacher' %}"><i class="fa fa-user-circle"></i> Teachers</a>
+                                <a class="nav-link {% if 'post' in request.path and 'create' not in request.path %}active{% endif %}" href="{% url 'teacherlogin' %}"><i class="fa fa-user-circle"></i> Teachers</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link {% if 'accounts/all' in request.path or 'accounts/detail' in request.path %}active{% endif %}" href="{% url 'admin-student' %}"><i class="fa fa-user"></i> Students</a>
+                                <a class="nav-link {% if 'accounts/all' in request.path or 'accounts/detail' in request.path %}active{% endif %}" href="{% url 'studentlogin' %}"><i class="fa fa-user"></i> Students</a>
 
                             </li>
                                 <a class="nav-link  {% if 'about' in request.path %}active{% endif %}" href="{% url 'admin-course' %}"><i class="fa fa-group"></i>  Yo'nalishlar </a>
@@ -100,11 +100,11 @@
                                 <div class="dropdown-menu" aria-labelledby="dropdown05">
                                     <a class="dropdown-item" href="{% url 'posts:postCreate' %}"><i class="fa fa-plus"></i> New post</a>
                                     <a class="dropdown-item" href="{% url 'user:viewProfile'%}"><i class="fa fa-id-card"></i> My accaunt</a>
-                                    <a href="{% url 'user-posts' user %}" class="dropdown-item "><i class="fas fa-money-check  "></i> My books</a>
-                                    <a href="{% url 'post-create' %} " class="dropdown-item "><i class="fas fa-file-download"></i> Upload books</a>
+                                    <a class="dropdown-item" href="{% url 'admin-student'%}"><i class="fa fa-user"></i> Student's</a>
+                                    <a class="dropdown-item" href="{% url 'admin-student'%}"><i class="fa fa-circle"></i> Teacher's</a>
+                                    
                                     <a class="dropdown-item" href="{% url 'admin-question' %}"><i class="fa fa-question"></i>  Create a test</a>
-                                    <a class="dropdown-item " href="{% url 'user:updateProfile' %} "><i class="fa fa-pencil-square-o "></i> Accaunt edit</a>
-                                    <a class="dropdown-item " href="{% url 'user:changePassword' %} "><i class="fa fa-wrench "></i> Password upload</a>
+
                                     <a class="dropdown-item " href="{% url 'user:logout' %} "><i class="fa fa-sign-out "></i> Log out</a>
                                 </div>
 

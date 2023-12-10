@@ -1,32 +1,7 @@
 {% extends 'partials/admin-base.html' %} {% load static %} {% block content %}
 <!-- SLIDER section -->
 <section class="site-section pt-5 pb-5">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="owl-carousel owl-theme home-slider">
 
-                    {% for randompost in randomposts %}
-                    <div>
-                        <a href="{% url 'posts:postDetail' randompost.category.slug randompost.id randompost.slug %}" class="a-block d-flex align-items-center height-lg" style="background-image: url({{ randompost.image.url }});">
-                            <div class="text half-to-full">
-                                <span class="category mb-5">{{ randompost.category.name }}</span>
-                                <div class="post-meta">
-                                    <span class="author mr-2"><img src="{{ randompost.author.userdetail.image.url }}" alt="Colorlib"> {{ randompost.author.username }}</span>&bullet;
-                                    <span class="mr-2">{{ randompost.created | date }} </span> &bullet;
-                                    <span class="ml-2"><span class="fa fa-eye"></span> {{ randompost.getHitCount }}</span>
-                                </div>
-                                <h3>{{ randompost.title | title }}</h3>
-                                <p>{{ randompost.content | safe | linebreaks | truncatechars:100 }}</p>
-                            </div>
-                        </a>
-                    </div>
-                    {% endfor %}
-
-                </div>
-            </div>
-        </div>
-    </div>
 </section>
 <!-- END section -->
 
@@ -67,6 +42,16 @@
                         Hozircha tizimda {{total_question}}- ta test mavjud!
                     </div>
                     {% endif %}
+                    <div class="row mb-3">
+                        <div class="col-md-12 text-center text-capitalize" style="height:40px">
+                            <a onmouseover='$(this).addClass("btn btn-sm btn-primary")' onmouseout='$(this).removeClass("btn btn-sm btn-primary")' href="{% url 'teacherlogin' %}"> For Teacher sign in <i class="fa fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-12 text-center text-capitalize" style="height:40px">
+                            <a onmouseover='$(this).addClass("btn btn-sm btn-primary")' onmouseout='$(this).removeClass("btn btn-sm btn-primary")' href="{% url 'studentlogin' %}"> For student sign in <i class="fa fa-arrow-right"></i></a>
+                        </div>
+                    </div>
 
 
                     <!-- Show All Posts Link YEK -->
@@ -110,8 +95,10 @@
             </div>
         </div> </div>
 
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
         <!-- END main-content -->
-        {% endblock %}
+{% endblock %}
     <!-- Facts Start -->
 
     <!-- Facts Start -->

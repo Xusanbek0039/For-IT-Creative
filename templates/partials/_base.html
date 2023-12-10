@@ -85,9 +85,18 @@
                             <li class="nav-item">
                                 <a class="nav-link {% if 'accounts/all' in request.path or 'accounts/detail' in request.path %}active{% endif %}" href="{% url 'user:authors' %}"><i class="fa fa-user-circle"></i> Creator</a>
                             </li>
-                             <li class="nav-item">
-                                <a class="nav-link  {% if 'about' in request.path %}active{% endif %}" href="{% url 'quiz' %}"><i class="fa fa-question"></i>  Quiz </a>
-                            </li> 
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle {% if 'login' in request.path or 'register' in request.path %}active{% endif %}" href="" id="dropdown05" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-question"></i> Quiz</a>
+                                <div class="dropdown-menu" aria-labelledby="dropdown05">
+                                    <a class="dropdown-item" href="{% url 'quiz' %}"><i class="fa fa-question"></i>  Test bo'limi</a>
+                                    <a class="dropdown-item" href="{% url 'studentlogin' %}"><i class="fa fa-wrench"></i>  For student</a>
+                                    <a class="dropdown-item" href="{% url 'teacherlogin' %}"><i class="fa fa-user-plus"></i> For teacher</a>
+
+
+
+                                </div>
+
+                            </li>
                             <li class="nav-item">
                                 <a class="nav-link  {% if 'about' in request.path %}active{% endif %}" href="{% url 'pages:about' %}"><i class="fa fa-group"></i>  About </a>
                             </li>

@@ -1,25 +1,24 @@
 <!DOCTYPE html>
+
+
+
+
+
+
+
+{% extends 'partials/admin-base.html' %}
+{% load static %}
 {% load widget_tweaks %}
-<html lang="uz" dir="ltr">
-  <head>
-    <title>IT Creative</title>
-    <meta charset="utf-8">
-    <style>
 
-        form{
-           margin: 50px; 
-          
-        }
-
-    </style>
-  </head>
-  <body>
-    {% include "exam/navbar.html" %}
- 
-
-
-<br><br><br>
-<div class="container mt-3">
+{% block content %}
+    <section class="site-section">
+    <div class="container">
+    <div class="row mb-4">
+        <div class="col-md-6">
+            <h1>Ro'yxatdan o'tish!</h1>
+        </div>
+    </div>
+   <div class="container mt-3">
   <h3 style="text-align: center;">Ro'yxatdan o'tish (faqat o'qituvchilar uchun)</h3>
 <form method="POST" autocomplete="off" enctype="multipart/form-data">
     {% csrf_token %}
@@ -70,8 +69,7 @@
   </form>
 </div>
 
+    <!-- END main-content -->
 
-<br><br>
-{% include "exam/footer.html" %}
-  </body>
-</html>
+
+{% endblock %}
