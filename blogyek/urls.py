@@ -12,11 +12,13 @@ urlpatterns = [
     path('', include('pages.urls')),
     path('post/', include('posts.urls')),
     path('accounts/', include('users.urls')),
-    path('admin/', admin.site.urls),
+    path('admin-panel-kirish/', admin.site.urls),
     path('darslik/', include('blog.urls')),
     path('admin81/', admin.site.urls),
     path('teacher/',include('teacher.urls')),
     path('student/',include('student.urls')),
+
+    
     
 
 

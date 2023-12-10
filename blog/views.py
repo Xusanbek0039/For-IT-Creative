@@ -15,7 +15,11 @@ from django.urls import reverse_lazy
 from django.contrib.staticfiles.views import serve
 
 from django.db.models import Q
+from django.shortcuts import render
+from django.http import HttpResponseNotFound
 
+def page_not_found_view(request, exception):
+   return render(request, '404.html')
 
 def home(request):
     context = {
