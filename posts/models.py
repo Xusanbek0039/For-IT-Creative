@@ -2,33 +2,22 @@ from ckeditor.fields import RichTextField
 from django.conf import settings
 from django.db import models
 
-
-# Create your models here.
-
-
 class Category(models.Model):
     name = models.CharField(max_length=50, verbose_name='Kategoriya nomi')
     slug = models.SlugField(unique=True, help_text="Bu joyni qo'lda o'zgartirmaslik tavsiya etiladi.")
 
     def __str__(self):
         return self.name
-
-
 class Tag(models.Model):
     name = models.CharField(max_length=50, verbose_name='Yorliq nomi')
     slug = models.SlugField(unique=True, help_text="Bu joyni qo'lda o'zgartirmaslik tavsiya etiladi.")
-
     def __str__(self):
         return self.name
-
-
 class HitCount(models.Model):
     ip = models.CharField(max_length=100)
 
     def __str__(self):
         return self.ip
-
-
 class Post(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
