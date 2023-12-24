@@ -26,7 +26,6 @@
                                 <button class="btn btn-outline-secondary" type="submit">
                   Davom etish
                 </button>
-
                                 <a class="btn btn-outline-info" href="{% url 'post-detail' object.id %}">
                   Orqaga
                 </a>
@@ -37,7 +36,6 @@
                     </div>
 
                 </form>
-
                 <script>
                     function checkCaptcha() {
                         let captcha = prompt("Yo'q qilishni davom etish uchun Roziman so'zini kiriting");
@@ -49,11 +47,8 @@
                         return true;
                     }
                 </script>
-
             </div>
         </div>
-
     </div>
 </section>
-
 {% endblock %}
