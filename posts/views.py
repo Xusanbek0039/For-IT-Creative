@@ -14,8 +14,6 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Post, Category, Tag, HitCount, Comment
 
 
-# Create your views here.
-
 
 class CommentView(LoginRequiredMixin, CreateView):
     template_name = 'comment_create.html'
@@ -27,66 +25,52 @@ class CommentView(LoginRequiredMixin, CreateView):
         form.instance.post_id = self.kwargs['pk']
         messages.success(self.request, 'Fikr qo‘shildi.')
         return super().form_valid(form)
-
     def get_success_url(self):
         return reverse('posts:postDetail', args=(self.object.post.category.slug, self.object.post.pk, self.object.post.slug))
-
-
 class PostCreateView(LoginRequiredMixin, CreateView):
     template_name = 'post_create.html'
     model = Post
     fields = ['category', 'tags', 'title', 'image', 'content']
-
     def form_valid(self, form):
         post = form.save(commit=False)
         post.author = self.request.user
         post.slug = slugify(post.title)
         counter = 1
         temp_slug = post.slug
-
         while Post.objects.filter(
                 slug=post.slug).exists():  # If there is the same information in the database, it is created by adding 1 to the end.
             post.slug = '{}-{}'.format(temp_slug, counter)
             counter += 1
-
         form.save()
         messages.success(self.request, 'Sizning postingiz muvaffaqiyatli yaratildi.')
         return super(PostCreateView, self).form_valid(form)
-
     def get_success_url(self):
         return reverse('posts:postDetail', args=(self.object.category.slug, self.object.id, self.object.slug))
-
-
 class PostUpdateView(LoginRequiredMixin, UpdateView):
     model = Post
     template_name = 'post_update.html'
     template_name_suffix = '_update_form'
     fields = ['category', 'tags', 'title', 'image', 'content']
-
     @method_decorator(login_required)  # If logged in this works
     def dispatch(self, request, *args, **kwargs):
         post = self.get_object()
         if post.author != self.request.user:
             raise Http404("Siz ushbu postni tahrirlashingiz mumkin emas")
         return super(PostUpdateView, self).dispatch(request, *args, **kwargs)
-
     def form_valid(self, form):
         post = form.save(commit=False)
         post.slug = slugify(post.title)
         counter = 1
         temp_slug = post.slug
-
         dbpost = Post.objects.get(id=post.id)
         if dbpost.title != post.title:  # Do these if the title of the post has changed
             while Post.objects.filter(
                     slug=post.slug).exists():  # If there is the same information in the database, it is created by adding 1 to the end.
                 post.slug = '{}-{}'.format(temp_slug, counter)
                 counter += 1
-
         form.save()
         messages.success(self.request, "Sizning postingiz muvaffaqiyatli yangilandi.")
         return super(PostUpdateView, self).form_valid(form)
-
     def get_success_url(self):
         return reverse('posts:postDetail', args=(self.object.category.slug, self.object.id, self.object.slug))
 
