@@ -8,7 +8,6 @@
         </div>
         <div class="row blog-entries">
             <div class="col-md-12 col-lg-8 offset-lg-2 main-content">
-
                 <form method="POST" enctype="multipart/form-data">
                     {% csrf_token %}
                     <div class="col-md-12 form-group">
@@ -26,17 +25,11 @@
                     <input type="submit" value="Yuklash " class="btn btn-primary  fas fa-download">
                 </div>
             </div>
-
             </form>
-            <!-- TODO: Post Oluşturma, Giriş yapan kullanıcının kendi post'larını düzenlemesi, silmesi -->
         </div>
         <script>
             $('input, select').addClass('id_title  form-control ');
             $('textarea').attr('cols', '100').addClass('id_content form-control ');
             $('input[type="submit "]').removeClass('id_submit ');
         </script>
-
-        <!-- END main-content -->
-
-
         {% endblock %}
