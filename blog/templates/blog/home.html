@@ -5,7 +5,6 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="owl-carousel owl-theme home-slider">
-
                     {% for randompost in randomposts %}
                     <div>
                         <a href="{% url 'posts:postDetail' randompost.category.slug randompost.id randompost.slug %}" class="a-block d-flex align-items-center height-lg" style="background-image: url({{ randompost.image.url }});">
