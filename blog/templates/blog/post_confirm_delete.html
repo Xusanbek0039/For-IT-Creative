@@ -10,25 +10,18 @@
             <div class="col-md-12 col-lg-8 offset-lg-2 main-content">
                 <form onsubmit="return checkCaptcha()" action="" method="POST">
                     {% csrf_token %}
-
                     <div class="card border-warning mb-3">
-
                         <div class="card-header">
                             Ogohlantirish!
                         </div>
-
                         <div class="card-body">
-
                             <h5 class="card-title">Fileni o‘chirish jarayoni</h5>
-
                             <p class="card-text">
                                 Eslatib o‘tamiz file o‘chirilgandan so‘ng uni qaytsa qiklash iloji yo‘q!
                             </p>
-
                             <p class="card-text">
                                 "{{ object.title }}" nomli fileni o‘chirish!
                             </p>
-
                             <div class="form-group">
                                 <button class="btn btn-outline-secondary" type="submit">
                   Davom etish
