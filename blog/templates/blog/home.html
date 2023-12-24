@@ -60,13 +60,10 @@
                         <a class="btn btn-outline-primary  btn-d " href="{{ post.file.url }}" download type="submit"><i class="fas fa-download"></i> Yuklab olish</a>
                     </div>
                     {% endif %}
-
                 </div>
-
             </div>
         </article>
     </div>
-
     {% endfor %} {% if is_paginated %} {% if page_obj.has_previous %}
     <a class="btn btn-outline-info mb-4" href="?page=1">Birinchidan</a>
     <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.previous_page_number }}">Oldingi</a> <a class="btn btn-outline-info mb-4" href="?page={{ num }}">{{ num }}</a> {% endif %} {% if page_obj.has_next %}
