@@ -49,9 +49,6 @@
                     <h5>{{ post.blog }}</h5>
                 </a>
                 {% endif %}
-
-
-
                 <h2><a class="article-title text-justify " href="{% url 'post-detail' post.id %}"><i class="fas fa-bookmark"></i>{{ post.title }}</a></h2>
                 <div class="d-flex justify-content-between">
                     <p class="article-content text-justify text-truncate overflow-hidden"><i class="fas fa-text-width"></i>{{ post.content }}</p>
