@@ -1,17 +1,13 @@
 {% extends 'partials/_base.html' %} {% load static %} {% block content %}
-
 <section class="site-section">
     <div class="container">
-
         <div class="row mb-4">
             <div class="col-md-6 offset-md-3">
                 <h1>File o‘chirishni tasdiqlash</h1>
             </div>
         </div>
-
         <div class="row blog-entries">
             <div class="col-md-12 col-lg-8 offset-lg-2 main-content">
-
                 <form onsubmit="return checkCaptcha()" action="" method="POST">
                     {% csrf_token %}
 
